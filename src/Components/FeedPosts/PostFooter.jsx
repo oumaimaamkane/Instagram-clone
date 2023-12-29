@@ -2,7 +2,7 @@ import { Box, Button, Flex , Input, InputGroup, InputRightElement, Text} from '@
 import {IoHeart, IoHeartOutline} from 'react-icons/io5'
 import { FaRegComment } from 'react-icons/fa6'
 import { useState } from 'react'
-function PostFooter() {
+function PostFooter({isProfilePage}) {
   const [liked , setLiked] = useState(false);
   const [likes , setLikes] = useState(500);
   const handleLikes = () =>{
@@ -30,15 +30,20 @@ function PostFooter() {
     <Text size={'sm'}>
     {likes} likes
     </Text>
-      <Text fontSize={'sm'}>
-        Oumaima Amkane {'_'}
-        <Text as={'span'}>
-          Good
+    {!isProfilePage && (
+      <>
+        <Text fontSize={'sm'}>
+          Oumaima Amkane {'_'}
+          <Text as={'span'}>
+            Good
+          </Text>
         </Text>
-      </Text>
-      <Text fontSize={'sm'} color={'gray'}>
-        View all 1000 comments
-      </Text>
+        <Text fontSize={'sm'} color={'gray'}>
+          View all 1000 comments
+        </Text>
+      </>)}
+      
+
       <Flex gap={4} w={'full'} justifyContent={'space-between'} alignItems={'center'}>
         <InputGroup>
         <Input placeholder='enter an element' variant={'flashed'} bg={'initial'} borderBottom={"1px solid"} borderColor={'gray.500'}/>

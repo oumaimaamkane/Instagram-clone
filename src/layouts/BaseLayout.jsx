@@ -4,10 +4,10 @@ import SideBar from '../Components/SideBar'
 import { useLocation } from 'react-router-dom'
 
 function BaseLayout({children}) {
-    const {location} = useLocation();
+    const location = useLocation();
   return (
     <Flex >
-        {location !== '/auth' ? (
+        {location.pathname !== '/auth' ? (
             <Box width={{base :'70px' , md : '240px'}}>
                 <SideBar/>
             </Box>

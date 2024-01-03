@@ -1,5 +1,5 @@
 import { Box, Container, Flex , Image, VStack } from "@chakra-ui/react"
-import AuthForm from "../../Components/AuthForm"
+import AuthForm from "../../Components/Auth/AuthForm"
 function Auth() {
   return (
       <Container maxW={"container.md"}>
